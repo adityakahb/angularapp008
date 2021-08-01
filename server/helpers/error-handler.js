@@ -1,8 +1,8 @@
 const errorHandler = (err, req, res, next) => {
-  if (err.name === "UnauthorizedError") {
-    return res.status(401).json({ message: "The user is not authorized" });
+  if (err.name === 'UnauthorizedError') {
+    return res.status(401).json({ message: 'The user is not authorized' });
   }
-  if (err.name === "ValidationError") {
+  if (err.name === 'ValidationError') {
     return res.status(401).json({ message: err });
   }
 
