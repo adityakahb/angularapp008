@@ -17,6 +17,7 @@ server.use(express.json());
 server.use(morgan('tiny'));
 server.use(authJwt());
 server.use(errorHandler);
+server.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 
 //Routes
 const categoriesRoutes = require('./routes/categories');
