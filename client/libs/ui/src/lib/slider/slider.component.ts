@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'slider',
+  selector: 'ui-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
