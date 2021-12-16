@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+@Component({
+    selector: 'admin-categories-form',
+    templateUrl: './categories-form.component.html',
+    styleUrls: ['./categories-form.component.scss']
+})
+export class CategoriesFormComponent implements OnInit {
+    form: FormGroup;
+
+    constructor(private formBuilder: FormBuilder) {}
+    ngOnInit(): void {
+        this.form = this.formBuilder.group({
+            name: [''],
+            icon: ['']
+        });
+    }
+    onSumbit() {
+        console.log(this.form.controls.name.value);
+        console.log(this.form.controls.icon.value);
+    }
+}

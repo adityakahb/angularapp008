@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService, Category } from '@client/products';
 
 @Component({
     selector: 'client-categories-list',
@@ -6,25 +7,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-    categories = [
-        {
-            id: '1',
-            name: 'category-1',
-            icon: 'icon-1'
-        },
-        {
-            id: '2',
-            name: 'category-2',
-            icon: 'icon-2'
-        },
-        {
-            id: '3',
-            name: 'category-3',
-            icon: 'icon-3'
-        }
-    ];
+    categories: Category[] = [];
 
-    constructor() {}
+    constructor(private categoriesServices: CategoriesService) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.categoriesServices.getCategories().subscribe((categories) => {
+            this.categories = categories;
+        });
+    }
 }
