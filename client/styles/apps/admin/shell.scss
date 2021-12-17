@@ -13,7 +13,7 @@
   &-sidebar {
     position: fixed;
     width: 175px;
-    background-color: black;
+    background-color: #0a1d31;
     height: 100%;
     top: 0;
 
@@ -22,7 +22,7 @@
       width: 100%;
 
       img {
-        width: 100%;
+        max-width: 100%;
       }
     }
 
@@ -30,7 +30,7 @@
       ul {
         margin: 0;
         padding: 0;
-        
+
         li {
           display: block;
           list-style: none;
@@ -40,6 +40,7 @@
             color: var(--surface-a);
             padding: 10px 15px;
             display: block;
+            width: 100%;
 
             &:hover {
               background-color: var(--blue-700);
@@ -52,25 +53,15 @@
             }
 
             &.logout {
-              color: var(-blue-500);
+              color: var(--blue-500);
             }
           }
         }
       }
     }
   }
-}
-.admin-page {
-  padding: 15px;
-  &-header {
-    .title {
-    }
-    .actions {
-      text-align: right;
-    }
-  }
 
-  .p-fieldset {
-    margin-bottom: 15px;
+  &-page {
+    padding: 15px;
   }
 }
